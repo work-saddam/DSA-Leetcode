@@ -26,11 +26,11 @@ function singleNumber(nums) {
   // Every element appears twice except one
   // You need to find that single unique element
 
-  let xor = 0;
+  let res = 0;
   for (let i = 0; i < nums.length; i++) {
-    xor = xor ^ nums[i];
+    res = res ^ nums[i];
   }
-  return xor;
+  return res;
 }
 
 console.log(singleNumber([2, 2, 1])); //1

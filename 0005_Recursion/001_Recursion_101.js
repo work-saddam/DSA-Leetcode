@@ -34,9 +34,16 @@ fun(5);
 
 // Q. Print from 1 to n using recursion.
 
-function print(num, curr = 1) {
-  if (curr > num) return;
-  console.log(curr);
-  print(num, ++curr);
+function print(n){
+ if(n<1) return n 
+ print(n-1)
+ console.log(n)
 }
-print(10);
+print(5)
+
+// function print(num, curr = 1) {
+//   if (curr > num) return;
+//   console.log(curr);
+//   print(num, ++curr);
+// }
+// print(10);
