@@ -38,15 +38,20 @@ function missingNumber(nums) {
   return totalSum - arraySum;
 }
 
-// var missingNumber = function(nums) {
-//     const set = new Set(nums)
-//     for(let i=0;i<=nums.length;i++){
-//         if(!set.has(i)){
-//             return i
-//         }
-//     }
-//     return -1
-// };
+// Approach 2: Using XOR
+// a ^ a = 0, a ^ 0 = a
+// XOR indices (0 to n) with array elements.
+// Matching numbers cancel out, leaving the missing number.
+var missingNumber = function(nums) {
+    let ans = nums.length
+    for(let i=0;i<nums.length;i++){
+        ans = ans^i
+        ans = ans^nums[i]
+    }
+    return ans
+};
+// Time Complexity: O(n)
+// Space Complexity: O(1)
 
 console.log(missingNumber([3, 0, 1])); //2
 console.log(missingNumber([0, 1])); //2
