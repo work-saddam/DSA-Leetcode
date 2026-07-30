@@ -22,3 +22,21 @@ var reverseStr = function (s, k) {
 };
 // Time Complexity - O(n)
 // Space Complexity	- O(n)
+
+// Approach 2
+var reverseStr = function (s, k) {
+  let arr = s.split("");
+
+  for (let i = 0; i < arr.length; i = i + 2 * k) {
+    let mid = k / 2;
+
+    for (let j = 0; j < mid; j++) {
+      let temp = arr[i + j];
+      arr[i + j] = arr[i + k - 1 - j];
+      arr[i + k - 1 - j] = temp;
+    }
+  }
+  return arr.join("");
+};
+// Time Complexity - O(n)
+// Space Complexity - O(n)
